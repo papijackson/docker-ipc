@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+
+  main:
+    image: jenkinsci/jenkins:latest
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - /var/jenkins:/var/jenkins_home
+    environment:
+      - JENKINS_OPTS="--prefix=/jenkins"
